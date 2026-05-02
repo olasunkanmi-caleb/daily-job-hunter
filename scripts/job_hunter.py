@@ -16,7 +16,7 @@ from email.mime.text import MIMEText
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 EMAIL_SENDER     = os.environ.get("EMAIL_SENDER", "")
 EMAIL_PASSWORD   = os.environ.get("EMAIL_PASSWORD", "")
-EMAIL_RECIPIENT  = os.environ.get("EMAIL_RECIPIENT", "olasunkanmi.alade20@gmail.com")
+EMAIL_RECIPIENT  = os.environ.get("EMAIL_RECIPIENT", "ola.official26@gmail.com")
 
 PROFILE = """
 Candidate: Olasunkanmi Alade Caleb
@@ -246,6 +246,11 @@ def main():
     html = build_html_email(jobs_json)
     send_email(html)
     print("🎉 Done!")
+
+
+if __name__ == "__main__":
+    main()
+
 
 
 if __name__ == "__main__":
