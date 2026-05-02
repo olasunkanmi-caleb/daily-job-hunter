@@ -1,9 +1,9 @@
-name: Daily Job Hunt — 10am
+name: Daily Job Hunt 10am
 
 on:
   schedule:
-    - cron: '0 10 * * *'   # Every day at 10:00 AM UTC
-  workflow_dispatch:        # Also allows manual trigger from GitHub UI
+    - cron: '0 10 * * *'
+  workflow_dispatch:
 
 jobs:
   hunt:
@@ -22,9 +22,8 @@ jobs:
       - name: Run daily job hunter
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          EMAIL_SENDER:      ${{ secrets.EMAIL_SENDER }}
-          EMAIL_PASSWORD:    ${{ secrets.EMAIL_PASSWORD }}
-          EMAIL_RECIPIENT:   ${{ secrets.EMAIL_RECIPIENT }}
+          EMAIL_SENDER: ${{ secrets.EMAIL_SENDER }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          EMAIL_RECIPIENT: ${{ secrets.EMAIL_RECIPIENT }}
         run: |
           python scripts/job_hunter.py
-
