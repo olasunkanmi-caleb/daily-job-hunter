@@ -6,7 +6,9 @@ Sends results via email every morning at 10am
 
 import os
 import json
-import smtplib
+import import smtplib
+import sys
+sys.stdout.reconfigure(encoding='utf-8')
 import urllib.request
 import urllib.parse
 from datetime import datetime
@@ -226,7 +228,7 @@ def send_email(html_body: str) -> None:
     """Send the HTML email via Gmail SMTP."""
     today = datetime.now().strftime("%d %b %Y")
     msg = MIMEMultipart("alternative")
-    msg["Subject"] = f"🎯 Daily Job Hunt — {today} | CNC/Mould/Mechanical Engineer (Visa Sponsored)"
+    msg["Subject"] = f"Daily Job Hunt — {today} | CNC/Mould/Mechanical Engineer (Visa Sponsored)"
     msg["From"]    = EMAIL_SENDER
     msg["To"]      = EMAIL_RECIPIENT
     msg.attach(MIMEText(html_body, "html"))
